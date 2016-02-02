@@ -5,4 +5,11 @@ credit to Boz and Brad
 https://github.com/boztalay/Config
 https://github.com/bhekman/config
 
-Currently it's only vim, but hey it's a start
+For vim, add this line to ~/.vimrc:
+source ~/joshify/josh.vim
+
+For inputrc, add this line to ~/.inputrc:
+$include ~/joshfig/inputrc
+
+For tmux.conf, add this line to ~/.tmux.conf:
+source-file ~/joshfig/tmux.conf

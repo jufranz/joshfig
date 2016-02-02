@@ -28,6 +28,7 @@ call SetupVAM()
 
 VAMActivate The_NERD_Commenter
 VAMActivate EasyMotion
+VAMActivate github:christoomey/vim-tmux-navigator
 
 " Comma as mapleader
 let mapleader = ","
