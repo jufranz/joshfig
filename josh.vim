@@ -49,8 +49,8 @@ set mouse=a
 
 " Indentation
 filetype indent off
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set shiftround
 set expandtab
 set autoindent
