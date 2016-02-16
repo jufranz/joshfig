@@ -38,7 +38,7 @@ let mapleader = ","
 syntax on
 set number
 set cursorline
-set pastetoggle=<leader>.
+"set pastetoggle=<leader>.
 set showcmd
 set wildmenu
 set wildmode=list:longest
@@ -60,6 +60,10 @@ filetype plugin indent on
 set hlsearch
 set ignorecase
 nnoremap ./ :nohlsearch<CR>
+
+" remap zx to escape
+inoremap zx <Esc>
+vnoremap zx <Esc>
 
 " Colors
 colorscheme torte
