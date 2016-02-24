@@ -29,6 +29,7 @@ call SetupVAM()
 VAMActivate The_NERD_Commenter
 VAMActivate EasyMotion
 VAMActivate github:christoomey/vim-tmux-navigator
+VAMActivate github:nachumk/systemverilog.vim
 
 " Comma as mapleader
 let mapleader = ","
@@ -46,6 +47,7 @@ set title
 set scrolloff=10
 set nu
 set mouse=a
+set wrap!
 
 " Indentation
 filetype indent off
@@ -65,8 +67,14 @@ nnoremap ./ :nohlsearch<CR>
 inoremap zx <Esc>
 vnoremap zx <Esc>
 
+" Muck Fake
+autocmd FileType make setlocal noexpandtab
+
 " Colors
 colorscheme torte
 
 " Move to word
 nmap s <Plug>(easymotion-bd-w)
+
+" verilog header highlighting
+autocmd BufNewFile,BufRead *.vh   set syntax=verilog
