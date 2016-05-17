@@ -30,6 +30,7 @@ VAMActivate The_NERD_Commenter
 VAMActivate EasyMotion
 VAMActivate github:christoomey/vim-tmux-navigator
 VAMActivate github:nachumk/systemverilog.vim
+VAMActivate github:tpope/vim-abolish
 
 " Comma as mapleader
 let mapleader = ","
@@ -66,6 +67,9 @@ nnoremap ./ :nohlsearch<CR>
 " remap zx to escape
 inoremap zx <Esc>
 vnoremap zx <Esc>
+
+" remap <leader> p to paste without moving cursor
+nnoremap <leader>p P`[
 
 " Muck Fake
 autocmd FileType make setlocal noexpandtab
