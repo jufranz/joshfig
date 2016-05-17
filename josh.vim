@@ -31,6 +31,7 @@ VAMActivate EasyMotion
 VAMActivate github:christoomey/vim-tmux-navigator
 VAMActivate github:nachumk/systemverilog.vim
 VAMActivate github:tpope/vim-abolish
+VAMActivate indentLine
 
 " Comma as mapleader
 let mapleader = ","
