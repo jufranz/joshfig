@@ -6,7 +6,7 @@ https://github.com/boztalay/Config
 https://github.com/bhekman/config
 
 For vim, add this line to ~/.vimrc:
-source ~/joshify/josh.vim
+source ~/joshfig/josh.vim
 
 For inputrc, add this line to ~/.inputrc:
 $include ~/joshfig/inputrc
