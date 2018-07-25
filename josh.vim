@@ -63,7 +63,7 @@ filetype plugin indent on
 " Search highlighting
 set hlsearch
 set ignorecase
-nnoremap ./ :nohlsearch<CR>
+nnoremap zz :nohlsearch<CR>
 
 " remap zx to escape
 inoremap zx <Esc>
