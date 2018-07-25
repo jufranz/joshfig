@@ -6,8 +6,18 @@ function parse_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/[\1$(parse_git_dirty)]/"
 }
 
+RED="\[\033[31m\]"
+GREEN="\[\033[32m\]"
+YELLOW="\[\033[33m\]"
+BLUE="\[\033[34m\]"
+PURPLE="\[\033[35m\]"
+TURQUOISE="\[\033[36m\]"
+RESET="\[\033[0m\]"
+
 #export PS1='\[\033[0;32m\]\u@\H\[\033[0;36m\] \w\[\033[31m\] $(parse_git_branch)\[\033[0;36m\]$\[\033[00m\] '
-export PS1='\[\033[0;32m\]\u@\H\[\033[0;36m\] \w\[\033[31m\] \[\033[0;36m\]$\[\033[00m\] '
+#export PS1='\[\033[0;32m\]\u@\H\[\033[0;36m\] \w\[\033[31m\] \[\033[0;36m\]$\[\033[00m\] '
+#export PS1="${GREEN}\u@\H${TURQUOISE} \w $ ${RESET}"
+export PS1="${BLUE}\u@\H ${RED}>${YELLOW}>${GREEN}> ${TURQUOISE}\w/\n${GREEN}$ ${RESET}"
 
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/"
