@@ -45,7 +45,7 @@ set cursorline
 set showcmd
 set wildmenu
 set wildmode=list:longest
-set title
+"set title
 set scrolloff=10
 set nu
 set mouse=a
