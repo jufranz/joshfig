@@ -40,7 +40,8 @@ let mapleader = ","
 
 syntax on
 set number
-set cursorline
+" https://github.com/vim/vim/issues/2584
+"set cursorline
 "set pastetoggle=<leader>.
 set showcmd
 set wildmenu
@@ -83,3 +84,6 @@ nmap s <Plug>(easymotion-bd-w)
 
 " verilog header highlighting
 autocmd BufNewFile,BufRead *.vh   set syntax=verilog
+
+" Set up backspace, just in case it wasn't set up by the system
+set backspace=indent,eol,start
