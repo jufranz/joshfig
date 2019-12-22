@@ -32,6 +32,7 @@ VAMActivate github:christoomey/vim-tmux-navigator
 VAMActivate github:nachumk/systemverilog.vim
 VAMActivate github:tpope/vim-abolish
 VAMActivate indentLine
+VAMActivate github:godlygeek/tabular
 
 " Comma as mapleader
 let mapleader = ","
