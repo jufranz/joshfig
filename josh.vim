@@ -17,21 +17,20 @@ fun! SetupVAM()
   " let c.auto_install = 0
   let &rtp.=(empty(&rtp)?'':',').c.plugin_root_dir.'/vim-addon-manager'
   if !isdirectory(c.plugin_root_dir.'/vim-addon-manager/autoload')
-  execute '!git clone --depth=1 git://github.com/MarcWeber/vim-addon-manager '
-  \       shellescape(c.plugin_root_dir.'/vim-addon-manager', 1)
+    execute '!git clone --depth=1'
+        \       'https://github.com/MarcWeber/vim-addon-manager'
+        \       shellescape(c.plugin_root_dir.'/vim-addon-manager', 1)
   endif
 
   " This provides the VAMActivate command, you could be passing plugin names, too
   call vam#ActivateAddons([], {})
 endfun
-call SetupVAM() 
+call SetupVAM()
 
-VAMActivate The_NERD_Commenter
-VAMActivate EasyMotion
 VAMActivate github:christoomey/vim-tmux-navigator
 VAMActivate github:nachumk/systemverilog.vim
 VAMActivate github:tpope/vim-abolish
-VAMActivate indentLine
+VAMActivate github:Yggdroot/indentLine
 VAMActivate github:godlygeek/tabular
 
 " Comma as mapleader
