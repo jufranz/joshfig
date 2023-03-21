@@ -87,3 +87,7 @@ autocmd BufNewFile,BufRead *.vh   set syntax=verilog
 
 " Set up backspace, just in case it wasn't set up by the system
 set backspace=indent,eol,start
+
+" Set code folding
+set foldmethod=syntax
+set foldlevelstart=99
