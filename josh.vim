@@ -33,8 +33,8 @@ VAMActivate github:tpope/vim-abolish
 VAMActivate github:Yggdroot/indentLine
 VAMActivate github:godlygeek/tabular
 
-" Comma as mapleader
-let mapleader = ","
+" z as mapleader
+let mapleader = "z"
 
 " Misc "
 
@@ -42,7 +42,6 @@ syntax on
 set number
 " https://github.com/vim/vim/issues/2584
 "set cursorline
-"set pastetoggle=<leader>.
 set showcmd
 set wildmenu
 set wildmode=list:longest
@@ -64,14 +63,21 @@ filetype plugin indent on
 " Search highlighting
 set hlsearch
 set ignorecase
-nnoremap zz :nohlsearch<CR>
+nnoremap <leader>z :nohlsearch<CR>
 
 " remap zx to escape
-inoremap zx <Esc>
-vnoremap zx <Esc>
+inoremap <leader>x <Esc>
+vnoremap <leader>x <Esc>
 
-" remap <leader> p to paste without moving cursor
-nnoremap <leader>p P`[
+" remap <leader> P to paste without moving cursor
+nnoremap <leader>P P`[
+
+" remap <leader>n to next file, <leader>p to previous file
+nnoremap <leader>n :next<CR>
+nnoremap <leader>p :previous<CR>
+
+" remap <leader>. to paste toggle
+nnoremap <leader>. :set paste!<CR>:set paste?<CR>
 
 " Muck Fake
 autocmd FileType make setlocal noexpandtab
