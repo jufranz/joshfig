@@ -1,0 +1,3 @@
+WLR_DRM_DEVICES=/dev/dri/card1:/dev/dri/card0
+SDL_VIDEODRIVER=wayland
+QT_QPA_PLATFORM=wayland

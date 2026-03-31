@@ -1,15 +1,23 @@
 # joshfig
-A stupidly named way to have config files persist across machines
+A stupidly named way to have config files persist across machines.
+Uses [GNU Stow](https://www.gnu.org/software/stow/) for symlink management.
 
-credit to Boz and Brad
-https://github.com/boztalay/Config
-https://github.com/bhekman/config
+## Setup
 
-For vim, add this line to ~/.vimrc:
-source ~/joshfig/josh.vim
+### Terminal essentials
+```bash
+cd ~/joshfig
+stow bash vim tmux readline
+echo 'source ~/.josh_bashrc' >> ~/.bashrc
+```
 
-For inputrc, add this line to ~/.inputrc:
-$include ~/joshfig/inputrc
+### Desktop (sway/waybar)
+```bash
+cd ~/joshfig
+stow sway waybar
+```
 
-For tmux.conf, add this line to ~/.tmux.conf:
-source-file ~/joshfig/tmux.conf
+## Credits
+- Boz: https://github.com/boztalay/Config
+- Brad: https://github.com/bhekman/config
+- Claude (Anthropic) helped with the stow conversion

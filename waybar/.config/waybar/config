@@ -1,0 +1,85 @@
+{
+  "layer": "top",
+    "position": "top",
+    "height": 50,
+    "spacing": 4,
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-center": ["clock"],
+    "modules-right": [
+      "tray",
+      "pulseaudio",
+      "cpu",
+      "temperature",
+      "memory",
+      "network", 
+      "custom/notification"
+    ],
+
+    "sway/workspaces": {
+      "disable-scroll": true,
+      "all-outputs": false,
+      "format": "{name}"
+    },
+    "clock": {
+      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+      "format": "{:%a, %b %d  %I:%M %p}"
+    },
+    "pulseaudio": {
+      "format": "{icon}  {volume}%",
+      "format-muted": "  Muted",
+      "format-icons": {
+        "default": ["", "", ""]
+      },
+      "on-click": "pavucontrol"
+    },
+    "cpu": {
+      "format": " {usage}%",
+      "tooltip": false,
+      "interval": 1,
+      "states": {
+        "warning": 70,
+        "critical": 90
+      }
+    },
+    "temperature": {
+      "critical-threshold": 80,
+      "format": "{icon} {temperatureC}°C",
+      "format-icons": ["", "", "", "", ""]
+    },
+    "memory": {
+      "format": " {}%",
+      "tooltip": false,
+      "interval": 1
+    },
+    "network": {
+      "format-wifi": "  {essid}",
+      "format-ethernet": "⇌  Connected",
+      "format-disconnected": "⚠  Disconnected",
+      "tooltip-format": "{ifname} via {gwaddr}"
+    },
+    "tray": {
+      "icon-size": 24,
+      "spacing": 10
+    },
+    "custom/notification": {
+      "tooltip": false,
+      "format": "{icon}",
+      "format-icons": {
+        "notification": "<span foreground='red'><sup>●</sup></span>",
+        "none": "",
+        "dnd-notification": "<span foreground='red'><sup>●</sup></span>",
+        "dnd-none": "",
+        "inhibited-notification": "<span foreground='red'><sup>●</sup></span>",
+        "inhibited-none": "",
+        "dnd-inhibited-notification": "<span foreground='red'><sup>●</sup></span>",
+        "dnd-inhibited-none": ""
+      },
+      "return-type": "json",
+      "exec-if": "which swaync-client",
+      "exec": "swaync-client -swb",
+      "on-click": "swaync-client -t -sw",
+      "on-click-right": "swaync-client -d -sw",
+      "escape": true
+    }
+}
+

@@ -1,0 +1,82 @@
+* {
+  font-family: "FontAwesome", "Roboto", Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  border: none;
+  border-radius: 0;
+}
+
+window#waybar {
+  background-color: #282a36; /* Dark slate background */
+  color: #f8f8f2; /* Off-white text */
+  transition-property: background-color;
+  transition-duration: .5s;
+}
+
+/* Workspaces styling */
+#workspaces button {
+  padding: 0 10px;
+  background-color: transparent;
+  color: #6272a4; /* Dimmed unselected workspaces */
+}
+
+#workspaces button:hover {
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow: inherit;
+  text-shadow: inherit;
+}
+
+#workspaces button.focused {
+  background-color: #44475a;
+  color: #50fa7b; /* Bright green for active workspace */
+  border-bottom: 2px solid #50fa7b;
+}
+
+#workspaces button.urgent {
+  background-color: #ff5555; /* Dracula Red */
+  color: #f8f8f2;            /* Off-white text */
+  border-radius: 0px;        /* Keeping it sharp to match vanilla Sway */
+}
+
+/* Center and Right Modules */
+#clock,
+#battery,
+#network,
+#pulseaudio,
+#cpu,
+#temperature,
+#memory,
+#tray {
+  padding: 0 15px;
+  margin: 3px 2px;
+}
+
+/* Specific module colors to make them pop */
+#clock { color: #8be9fd; }
+#pulseaudio { color: #ffb86c; }
+#network { color: #ff79c6; }
+#battery { color: #f1fa8c; }
+#battery.critical:not(.charging) {
+  background-color: #ff5555;
+  color: #ffffff;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+#cpu { color: #f8f8f2; }
+#cpu.warning { color: #ff5555; }
+#temperature { color: #f8f8f2; }
+#temperature.critical { color: #ff5555; }
+#memory { color: #f8f8f2; }
+
+@keyframes blink {
+  to {
+    background-color: #ffffff;
+    color: #ff5555;
+  }
+}
+
+.modules-right {
+  padding-right: 15px; /* Adjust this number to push it further or closer */
+}
