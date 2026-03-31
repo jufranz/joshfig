@@ -1,7 +1,3 @@
-"
-" Source this file in your ~/.vimrc
-"
-
 set nocompatible | filetype indent plugin on | syn on
 
 fun! SetupVAM()
@@ -83,7 +79,7 @@ nnoremap <leader>. :set paste!<CR>:set paste?<CR>
 autocmd FileType make setlocal noexpandtab
 
 " Colors
-colorscheme torte
+"colorscheme torte
 
 " Move to word
 nmap s <Plug>(easymotion-bd-w)
@@ -97,3 +93,6 @@ set backspace=indent,eol,start
 " Set code folding
 set foldmethod=syntax
 set foldlevelstart=99
+
+" pascal-sandbox uses tabs
+autocmd BufRead,BufNewFile */pascal-sandbox/* setlocal noexpandtab ts=4 sw=4

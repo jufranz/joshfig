@@ -1,9 +1,10 @@
-append_if_not_found () {
-  grep -qF "$1" $2 && echo "$2 already contains line '$1'" || echo "$1" >> $2
-}
-append_if_not_found 'source ~/joshfig/josh_bashrc.sh' ~/.bashrc
-append_if_not_found 'source ~/joshfig/josh.vim' ~/.vimrc
-append_if_not_found '$include ~/joshfig/inputrc' ~/.inputrc
-append_if_not_found 'source-file ~/joshfig/tmux.conf' ~/.tmux.conf
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
+#!/bin/bash
+DIRNAME="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+cd "$DIRNAME"
+
+# Stow packages into home directory
+stow -v -t "$HOME" bash vim tmux readline
+
+# Add source line to .bashrc if not already present
+grep -qF 'source ~/.josh_bashrc' ~/.bashrc || echo 'source ~/.josh_bashrc' >> ~/.bashrc
+
