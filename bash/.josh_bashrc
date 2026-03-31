@@ -24,3 +24,6 @@ RESET="\[\033[0m\]"
 export PS1="${BLUE}\u@\H ${RED}>${YELLOW}>${GREEN}> ${TURQUOISE}\w/\n${GREEN}$ ${RESET}"
 
 export EDITOR='vim'
+
+# ssh-agent via keychain: reuse agent across sessions, prompt passphrase once after reboot
+eval "$(keychain --eval --quiet id_ed25519)"
